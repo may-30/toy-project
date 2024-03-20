@@ -1,4 +1,4 @@
-import modules
+from modules import sso, excel
 
 if __name__ == '__main__':
     # 1. input variables
@@ -10,10 +10,10 @@ if __name__ == '__main__':
     profile_name = input('profile name: ')
 
     # 2. crowl
-    aws_access_key_id, aws_secret_access_key, aws_session_token = modules.crowl(ct_url, email_id, email_pw, otp, account_id, profile_name)
+    aws_access_key_id, aws_secret_access_key, aws_session_token = crowl.crowl(ct_url, email_id, email_pw, otp, account_id, profile_name)
 
     # 3. sso
-    sso_lists = modules.sso(aws_access_key_id, aws_secret_access_key, aws_session_token)
+    sso_lists = sso.sso(aws_access_key_id, aws_secret_access_key, aws_session_token)
 
     # 4. excel
-    modules.excel(sso_lists)
+    excel.excel(sso_lists)

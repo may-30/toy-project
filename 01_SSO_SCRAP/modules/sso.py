@@ -3,10 +3,11 @@ import boto3
 def sso(aws_access_key_id, aws_secret_access_key, aws_session_token):
     # 1. common variables.
     # boto3 session.
-    session = boto3.session(
+    session = boto3.Session(
         aws_access_key_id = aws_access_key_id,
         aws_secret_access_key = aws_secret_access_key,
-        aws_session_token = aws_session_token
+        aws_session_token = aws_session_token,
+        region_name = "ap-northeast-2"
     )
     # client.
     sso_admin_client = session.client('sso-admin')

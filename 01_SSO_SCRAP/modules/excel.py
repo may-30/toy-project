@@ -1,4 +1,5 @@
 from openpyxl import Workbook
+from datetime import datetime
 
 def excel(sso_lists):
     # 1. initial setting.
@@ -48,4 +49,8 @@ def excel(sso_lists):
             cell.value = count
             count += 1
 
-    wb.save('./automatic/sso/test/test.xlsx')
+    # 6. file name
+    file_name = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+
+    # 7. file export
+    wb.save(f'./{file_name}.xlsx')

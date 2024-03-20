@@ -11,7 +11,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait as Wait
 from selenium.webdriver.support import expected_conditions as EC
 
-def crowling(ct_url, email_id, email_pw, otp, account_id, profile_name):
+def crowl(ct_url, email_id, email_pw, otp, account_id, profile_name):
     # 1. common variables.
     mfa = pyotp.TOTP(f'{otp}')
 
